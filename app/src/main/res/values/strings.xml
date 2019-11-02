@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Dika App</string>
+    <string name="text1">Text1</string>
+    <string name="text2">Text2</string>
+    <string name="button1">Button1</string>
+    <string name="inputEmail">inputPassword</string>
+    <string name="button">Button</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="please_input_password">Please Input Password</string>
+    <string name="please_input_email">Please Input Email</string>
+    <string name="textview">TextView</string>
+</resources>
