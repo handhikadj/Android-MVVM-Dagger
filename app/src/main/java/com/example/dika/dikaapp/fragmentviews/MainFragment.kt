@@ -12,21 +12,14 @@ import androidx.navigation.fragment.findNavController
 import com.example.dika.dikaapp.R
 import com.example.dika.dikaapp.databinding.MainFragmentBinding
 import com.example.dika.dikaapp.di.DaggerAppComponent
-import com.example.dika.dikaapp.util.UIHelpers
 import com.example.dika.dikaapp.viewmodel.MainFragmentViewModel
-import javax.inject.Inject
 
 
 class MainFragment : Fragment() {
 
-    @Inject
-    lateinit var uiHelpers: UIHelpers
-
     private val mainFragmentViewModel by lazy {
         ViewModelProviders.of(this).get(MainFragmentViewModel::class.java)
     }
-
-    private lateinit var viewModel: MainFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,10 +38,9 @@ class MainFragment : Fragment() {
         mainFragmentViewModel.navigateToHome.observe(this, Observer {
             if (it) {
                 findNavController().navigate(R.id.action_mainFragment_to_homeFragment)
+                mainFragmentViewModel.inHome()
             }
         })
-
-        uiHelpers.closeAppIfBack(this, viewLifecycleOwner)
 
         return binding.root
     }

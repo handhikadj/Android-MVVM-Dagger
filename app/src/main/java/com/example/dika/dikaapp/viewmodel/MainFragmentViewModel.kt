@@ -25,4 +25,8 @@ class MainFragmentViewModel : ViewModel() {
     fun toHome() {
         _navigateToHome.value = true
     }
+
+    fun inHome() {
+        _navigateToHome.value = false
+    }
 }
